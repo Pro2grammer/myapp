@@ -13,6 +13,7 @@ echo "Updating system and installing required packages..."
 sudo apt update && sudo apt upgrade -y
 sudo apt install -y git nginx nodejs npm
 
+
 # Clone the GitHub Repository
 echo "Cloning the repository..."
 sudo rm -rf $APP_DIR
@@ -21,15 +22,16 @@ sudo git clone $REPO_URL $APP_DIR
 # Set Up Backend
 echo "Setting up the backend..."
 cd $BACKEND_DIR
-npm install
+sudo npm install cors
+sudo npm install
 sudo npm install -g pm2
 pm2 start server.js --name backend
 
 # Build Frontend
 echo "Building the frontend..."
 cd $APP_DIR/frontend
-npm install
-npm run build
+sudo npm install
+sudo npm run build
 
 # Configure Nginx
 echo "Configuring Nginx..."
