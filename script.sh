@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Variables
-REPO_URL="https://github.com/<your-username>/myapp.git"  # Replace with your GitHub repo URL
+REPO_URL="https://github.com/Pro2grammer/myapp.git"  # Replace with your GitHub repo URL
 APP_DIR="/var/www/myapp"
 DOMAIN="nouman.com"
 FRONTEND_BUILD_DIR="$APP_DIR/frontend/build"
