@@ -37,7 +37,7 @@ sudo npm run build
 echo "Configuring Nginx..."
 sudo tee $NGINX_CONF > /dev/null <<EOL
 server {
-    listen 80;
+    listen 80 default_server;
     server_name $DOMAIN;
 
     location / {
@@ -60,6 +60,12 @@ EOL
 # Enable the Nginx Configuration
 echo "Enabling Nginx configuration..."
 sudo ln -sf $NGINX_CONF /etc/nginx/sites-enabled/
+# Delete the 'default' file in sites-available
+sudo rm -f /etc/nginx/sites-available/default
+
+# Delete the symlink to 'default' in sites-enabled
+sudo rm -f /etc/nginx/sites-enabled/default
+
 sudo nginx -t && sudo systemctl restart nginx
 
 # Add Domain to /etc/hosts (local testing only)
