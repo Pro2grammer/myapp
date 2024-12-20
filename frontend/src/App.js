@@ -29,7 +29,7 @@ function App() {
     <div className="App">
       <h1>Frontend App</h1>
       <p>{message ? message : "Loading..."}</p>
-      <p>{message2 ? message : "Loading..."}</p>
+      <p>{message2 ? message2 : "Loading..."}</p>
     </div>
   );
 }
