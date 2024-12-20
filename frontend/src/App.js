@@ -3,6 +3,7 @@ import "./App.css";
 
 function App() {
   const [message, setMessage] = useState("");
+  const [message2, setMessage2] = useState("");
 
   // Fetch data from backend API
   useEffect(() => {
@@ -14,12 +15,21 @@ function App() {
       .catch((error) => {
         console.error("Error fetching data:", error);
       });
+        fetch("https://jhelumaibackend.onrender.com/Say this is a message from an external api hosted on onrendrer.com")  // This should match the backend API endpoint
+      .then((response) => response.json())
+      .then((data) => {
+        setMessage2(data.message);
+      })
+      .catch((error) => {
+        console.error("Error fetching data:", error);
+      });
   }, []);
 
   return (
     <div className="App">
       <h1>Frontend App</h1>
       <p>{message ? message : "Loading..."}</p>
+      <p>{message2 ? message : "Loading..."}</p>
     </div>
   );
 }
