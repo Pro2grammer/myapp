@@ -11,7 +11,7 @@ app.use(cors({ origin: "http://nouman.com" }));
 
 // API Endpoint
 app.get("/api", (req, res) => {
-  res.json({ message: "Hello from the API Nouman!" });
+  res.json({ message: "Hello from the internal API Nouman! Hosted same VM" });
 });
 
 // Start the server
