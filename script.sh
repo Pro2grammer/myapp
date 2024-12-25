@@ -31,7 +31,7 @@ sudo npm run build
 echo "Configuring Nginx..."
 sudo tee $NGINX_CONF > /dev/null <<EOL
 server {
-    listen 80 default_server;
+    listen 80;
     server_name $DOMAIN;
 
     location / {
