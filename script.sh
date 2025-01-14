@@ -7,12 +7,12 @@ FRONTEND_BUILD_DIR="$APP_DIR/frontend/build"
 BACKEND_DIR="$APP_DIR/backend"
 NGINX_CONF="/etc/nginx/sites-available/$DOMAIN"
 
-echo "Updating system and installing required packages..."
+echo "Updating system and installing required packages"
 sudo apt update && sudo apt upgrade -y
 sudo apt install -y git nginx nodejs npm
 
 
-echo "Cloning the repository..."
+echo "Cloning the repository"
 sudo rm -rf $APP_DIR
 sudo git clone $REPO_URL $APP_DIR
 
