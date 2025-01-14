@@ -15,14 +15,7 @@ function App() {
       .catch((error) => {
         console.error("Error fetching data:", error);
       });
-        fetch("https://jhelumaibackend.onrender.com/Say this is a message from an external api hosted on onrendrer.com")  // This should match the backend API endpoint
-      .then((response) => response.json())
-      .then((data) => {
-        setMessage2(data.message);
-      })
-      .catch((error) => {
-        console.error("Error fetching data:", error);
-      });
+
   }, []);
 
   return (
